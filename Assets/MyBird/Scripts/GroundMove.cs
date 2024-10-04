@@ -12,13 +12,16 @@ namespace MyBird
         // Update is called once per frame
         void Update()
         {
+            if (GameManager.IsDeath)
+                return;
+
             MoveGround();
         }
 
         void MoveGround()
         {
-            //if (GameManager.IsStart == false)
-            //    return;
+            //if(GameManager.IsStart == false)
+            //   return;
 
             transform.Translate(Vector3.left * Time.deltaTime * moveSpeed, Space.World);
 
